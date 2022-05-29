@@ -1,5 +1,5 @@
 ### 분류 : DP
-### 문제이름 : [1로 만들기[(https://www.acmicpc.net/problem/1463) 
+### 문제이름 : [1로 만들기](https://www.acmicpc.net/problem/1463) 
 </br>
 
 ### 로직 : 
