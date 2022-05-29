@@ -2,20 +2,22 @@ import java.util.Scanner;
 
 public class main {
 
-    static int MAX =100000;
-    static int[] d= new int[MAX];
+   // static int MAX =100000;
+    //static int[] d= new int[MAX];
+    static int []d;
 
     public static void main(String[] args) {
 
         Scanner sc= new Scanner(System.in);
         int cnt= sc.nextInt();
-        System.out.println(make1(cnt));
+        d=new  int[cnt+1];
+        System.out.println(make2(cnt));
 
 
 
     }
 
-    static int make1(int n)
+    static int make1(int n)  //topdown recursion 방식
     {
         if (n==1)      //예외처리
             return 0;
@@ -32,6 +34,26 @@ public class main {
 
         return d[n];
     }
+
+    static int make2(int n)  //bottomup iteration 방식
+    {
+        d[1]=0;
+        for (int i=2;i<=n;i++)
+        {
+            d[i]=d[i-1]+1;
+            if (i%2==0 && d[i]> d[i/2]+1)
+            {
+                d[i] = d[i/2] + 1;
+            }
+            if (i%3==0 && d[i]> d[i/3]+1)
+            {
+                d[i] = d[i/3] + 1;
+            }
+
+        }
+        return d[n];
+    }
+
 
 
 
