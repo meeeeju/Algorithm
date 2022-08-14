@@ -7,7 +7,7 @@ top=0
 
 for i in range(size):
     data=list(sys.stdin.readline())
-    # print(data)
+    print(data)
     for j in data:
         if j==' ' or j=='\n':
             while(len(st)):
