@@ -1,6 +1,8 @@
 from collections import deque
-deq=deque([3])
-print(deq.pop())
 
-deq=deque('love')
-print(deq.popleft())
+graph=[]
+for _ in range(N):
+    graph.append(list(map(int,input())))
+
+
+data=map(int,input.split()) #리스트에 있는 모든 배열에 대하여 Int 적용

@@ -23,7 +23,7 @@ def BFS(graph, root):
     queue=deque([root])
     while queue:
         n=queue.popleft()
-        if n not in visited:
+        if n not in visited:   #방문한 노드는 다시 방문하지 않기 위함
             visited.append(n)
             if n in graph:
                 temp=list(graph[n]-set(visited))
