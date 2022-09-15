@@ -41,3 +41,5 @@ def bfs(x,y):
 
 
 print(bfs(0,0))
+
+print("hi")
