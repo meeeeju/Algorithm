@@ -1,4 +1,4 @@
-#적록색약
+#적록색약 2
 from collections import deque
 import sys
 
@@ -14,8 +14,6 @@ def bfs(x,y,c):   #c: currentcolor
             ny=y1+my[i]
             if nx<0 or nx >= N or ny<0 or ny >= N :
                 continue
-            if flag==1 and c=='R' and matrix[nx][ny]=='G':
-                matrix[nx][ny]=c
             if not visited[nx][ny] and matrix[nx][ny]==c:
                 queue.append((nx,ny))
                 visited[nx][ny]=1
@@ -25,12 +23,10 @@ def bfs(x,y,c):   #c: currentcolor
 
 
 N=int(input())
-
-# matrx=[[0]*N for _ in range(N)]
 matrix=[]
 visited=[[0]*N for _ in range(N)]
 cnt=0
-flag=0 
+second_cnt=0
 
 
 mx=[-1,1,0,0]
@@ -39,29 +35,41 @@ my=[0,0,-1,1]
 for i in range(N):
     matrix.append(list(input()))
 
-
-
-for _ in range(2):
-    cnt=0
-    for i in range(N):
+for i in range(N):
         for j in range(N):
             if not visited[i][j]:
                 if matrix[i][j]=='R':
-                        cnt=cnt+1
-                        bfs(i,j,'R')
+                    cnt=cnt+1
+                    bfs(i,j,'R')
                 if matrix[i][j]=='G':
-                    matrix[i][j]='R'
-                    if flag==1:
-                        cnt=cnt+1
-                        bfs(i,j,'R')
-                    else:
-                        cnt=cnt+1
-                        bfs(i,j,'G')
+                    cnt=cnt+1
+                    bfs(i,j,'G')
                 if matrix[i][j]=='B':
                     cnt=cnt+1
                     bfs(i,j,'B')
-    print(cnt,end=' ')
-    flag=1
-    visited=[[0]*N for _ in range(N)]
+
+
+visited=[[0]*N for _ in range(N)]
+
+for i in range(N):
+    for j in range(N):
+        if matrix[i][j] == 'G':
+            matrix[i][j] = 'R'
+
+for i in range(N):
+        for j in range(N):
+            if not visited[i][j]:
+                if matrix[i][j]=='R':
+                    second_cnt=second_cnt+1
+                    bfs(i,j,'R')
+                if matrix[i][j]=='B':
+                    second_cnt=second_cnt+1
+                    bfs(i,j,'B')
+
+
+
+print(cnt,second_cnt)
+
+
 
 
