@@ -15,6 +15,6 @@ a,b,c = map(int, input().split())  #unpacking 1 2 3을 입력 받았다면 a=1 b
  
 
 a = int(sys.stdin.readline())  #정수 한개 입력받기 
-b = sys.stdin.readline().rstrip()  #한줄 단위의 문자열 입력받기
+b =[ sys.stdin.readline()].rstrip()  #한줄 단위의 문자열 입력받기
 data = list(map(int, sys.stdin.readline().split()))  #띄어쓰기가 되어있는 여러개의 정수 입력받아  리스트로 저장하기
 data = list(map(int, sys.stdin.readline().rstrip()))  # 붙어있는 여러개의 정수 입력받아 리스트로 저장하기
