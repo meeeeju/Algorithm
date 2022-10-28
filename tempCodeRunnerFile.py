@@ -1,3 +1,2 @@
-
-# n=int(input())
-# print(n)
+data = list(map(int, sys.stdin.readline().rstrip()))  
+# print(data)

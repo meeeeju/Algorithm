@@ -40,7 +40,7 @@ def isPalindromeDequeue(str):
             deq.append(char.lower())
     
 
-    while len(deq<1):
+    while len(deq > 1):
         if deq.popleft() != deq.pop():
             print("회문이 아닙니다")
             return
@@ -50,3 +50,4 @@ def isPalindromeDequeue(str):
 
 isPalindromeIndex(input().rstrip())
 isPalindromeSlicing(input().rstrip())
+isPalindromeDequeue(input().rstrip())

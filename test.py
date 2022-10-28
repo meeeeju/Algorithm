@@ -3,10 +3,19 @@ import sys
 
 # input=sys.stdin.readline
 
+# data = list(map(int, sys.stdin.readline().rstrip()))  
+# print(data)
 
-p=[(0,0),(0,1),(0,2),(-1,2),(-1,3),(2,4)]
+# list1=[1,2,3,4,5]
+# print(list1[-1])
+class Account:
+        num_accounts = 0
+        def __init__(self, name):
+                self.name = name
+                Account.num_accounts += 1
+        def __del__(self):
+                Account.num_accounts -= 1
+kim=Account('meeju')
 
-# p=sorted(p,key=lambda x : (x[0],-x[1]))
-
-print(p.sort(key=lambda p: p[0]))
-print(p)
+print(kim.name)
+print(Account.num_accounts)
